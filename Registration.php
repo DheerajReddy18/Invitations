@@ -1,0 +1,50 @@
+
+
+<html>
+<head>
+   <title> Registration </title>
+    <style>
+      .container{
+	     font-size:20px;
+		 border-collapse:seperate;
+		 border-spacing:10px;
+	     position:absolute;
+	     top:30%;
+		 left:40%;
+		 outline:5px solid black;
+		 outline-offset:20px;
+          
+	  
+	   }
+	    body{
+            background-color:lightgrey;
+            
+        }
+   </style>
+</head>
+<body>
+  <div class="container">
+   <form  action="insert.php" method="post">
+     
+     <label for="username">Username:</label>
+	 <br />
+	 <input type="text" name="username" required>
+	 <br />
+	 <label for="emailid">Email id:</label>
+	 <br />
+	 <input type="text" name="emailid" required >
+	 <br  />
+	 <label for="password">Password:</label>
+	 <br />
+	 <input type="password" name="password_1" required>
+     <br   />
+	 <label for="password">Confirm password:</label> 
+	 <br />
+	 <input type="password" name="password_2" required>
+	 <br />
+	 <input type="submit" value="Register" name="register" >
+   </form>
+   <p>already a user?<a href="Login.php">log in</p> 
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<?php 
+
+include 'insert.php';
+if(!isset($_SESSION['username']))
+
+{
+    
+	header("location:login.php");
+}
+
+   
+ ?>
+  
+ <html>
+ <head>
+ <style>
+   body{
+	     background-color:lightgreen;
+         position:absolute;
+	     font-size:20px;
+		 left:25%;
+		 font-family:cursive;	     
+	     }
+		 
+	 #inv{
+	     outline:5px solid black;
+		 outline-offset:20px;
+	    
+	     }	 
+   
+  </style>
+ </head>
+ <body>
+  <?php
+   $name= $_SESSION['username'];
+   $r=mysqli_query($db,"SELECT serialnumber FROM info WHERE username='$name' ");
+   $data=mysqli_fetch_assoc($r);
+   $id=$data['serialnumber'];
+   $sql="SELECT * FROM events WHERE recipientid = '$id' "; 
+   $result=mysqli_query($db,$sql);
+   while($row_1=mysqli_fetch_assoc($result))
+   {
+    $eventid=$row_1['eventid'];
+    if($row_1['accepted']==1)
+    {
+	  echo "<div id='inv'> ";
+      $sql1=mysqli_query($db,"SELECT * FROM  invitation WHERE id='$eventid '") ; 
+ 	  $row=mysqli_fetch_assoc($sql1);
+ 	  echo '<br />';
+ 	  echo '<h2> ' ; 
+ 	  echo $row['type']." party";
+ 	  echo '</h2>';
+ 	  echo '<h3> ' ; 
+ 	  echo "party date: ".$row['date'];
+ 	  echo '</h3> ' ; 
+ 	  echo  "<h3>from :". $row['sender']."</h3>";
+ 	  echo $row['header'];
+ 	  echo "<br />";
+ 	  echo   $row['body'];
+ 	  echo "<br />";
+ 	  echo $row['footer'];
+	  echo "<br /><br />";
+ 	  echo "<br /><br /><br /><br />";
+ 	  echo "</div>";
+	 }
+	 
+  
+  }
+  echo "<br /><a href='index.php'>go to homepage</a>"; 
+  ?> 
+   
+ 
+ </body>
+ </html>

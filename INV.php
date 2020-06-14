@@ -1,0 +1,59 @@
+<?php
+include 'insert.php';
+if(!isset($_SESSION['username']))
+
+{
+    
+	header("location:login.php");
+}
+
+
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+	  
+	 body{
+	      background-color:lightblue;
+          position:absolute;
+	     font-size:20px;
+		 left:25%;
+		 font-family:cursive;	     
+	     }
+	 
+	</style>
+  </head>
+  <body >
+     <h2>Create a new invitation </h2>
+	 <p>________________________</p>
+     <form  action="insert.php" method="post">
+    
+	 <label for="date">Date:</label>
+	
+	 <input type="date" name="date" required>
+	
+	 <label for="type">Type of party:</label>
+		  
+	 <input type="text" name="type" required>
+	 <br />
+	 <p>________________________</p>
+	 <h3>Contents of invitation</h3>
+	 <label for="header">Header :</label>
+	 <br />	  
+	 <input type="text" name="header" required>
+	 <br /> 
+	 <label for="body">Body :</label>
+	 <br />	  
+	 <input type="text" name="body" required>
+	 <br />
+	 <label for="footer">footer :</label>
+	 <br />	  
+	 <input type="text" name="footer" required>
+	 <br />  
+	 <input type="submit" value="submit"  name="create">
+	 </body>
+</html>
