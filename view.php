@@ -47,14 +47,14 @@ if(!isset($_SESSION['username']))
      $rec=$row_1['recipientid'];
      if(isset($_POST['accept']))
  	{  
-     
+            $store=$_POST['accept'];
            mysqli_query($db,"UPDATE events SET accepted=1 WHERE eventid='$store'AND recipientid='$rec' ");
 	   unset($_POST['accept']); 
 	    header(Refresh:0"); 
   	   } 
   	if(isset($_POST['reject']))
     {  
-         
+           $store=$_POST['accept'];
            mysqli_query($db,"UPDATE events SET accepted=9 WHERE eventid='$store' AND recipientid='$rec' ");
 	   unset($_POST['reject']); 
 	   header("Refresh:0");
