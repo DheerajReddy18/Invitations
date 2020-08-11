@@ -4,7 +4,8 @@
   $errors=array();
   
   $db=mysqli_connect('127.0.0.1','root','');
-  mysqli_select_db($db,'dheeraj');
+  mysqli_query($db,'CREATE DATABASE dheeraj');
+  mysqli_select_db($db,"dheeraj");
   $table1="CREATE TABLE info ( serialnumber INT(11) AUTO_INCREMENT PRIMARY KEY,username VARCHAR(255),emailid VARCHAR(255),password VARCHAR(255))";
   mysqli_query($db,$table1);
   $table2="CREATE TABLE invitation (id INT(11) AUTO_INCREMENT PRIMARY KEY,sender VARCHAR(255),date DATE,type VARCHAR(255),header VARCHAR(255),body VARCHAR(500),footer VARCHAR(255))";
