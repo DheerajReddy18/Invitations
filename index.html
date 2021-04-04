@@ -3,14 +3,14 @@
   if(!isset($_SESSION['username']))
   {
     
-	header("location:login.php");
+	header("location:login.html");
   }
   
   if(isset($_GET['logout']))
   {
     session_destroy();
 	unset($_SESSION['username']);
-	header("location:login.php");
+	header("location:login.html");
   }	
   
   
@@ -54,10 +54,10 @@
    <?php endif ?>
    
    
-   <p>click here to create a new <a href="INV.php">Invitation</a></p>
-   <p>click here to see <a href="events.php">sent Invitations </a></p>
-   <p>click here to see <a href="view.php">recieved Invitations </a></p>
-   <P>click here to see <a href="acceptedinv.php">accepted Invitations </a>by you</p>
+   <p>click here to create a new <a href="INV.html">Invitation</a></p>
+   <p>click here to see <a href="events.html">sent Invitations </a></p>
+   <p>click here to see <a href="view.html">recieved Invitations </a></p>
+   <P>click here to see <a href="acceptedinv.html">accepted Invitations </a>by you</p>
    
    <br />
    <button><a href="index.php?logout='1'">logout</a></button>
