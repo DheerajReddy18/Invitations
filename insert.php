@@ -52,7 +52,7 @@
      echo '<br />inserted';
   $_SESSION['username']=$username;
   $_SESSION['success']="you are now logged in";
-  header("location:index.php");
+  header("location:index.html");
  }
 } 
  
@@ -76,7 +76,7 @@
 	   {
 	     $_SESSION['username']=$username;
 		 $_SESSION['success']="logged in successfully";
-		 header("location:index.php");
+		 header("location:index.html");
 	   }
 	   else
 	   
@@ -118,7 +118,7 @@
 	$result1=mysqli_query($db,"SELECT id FROM invitation WHERE date='$date' AND sender='$sender' AND type='$type'");
 	$row1=mysqli_fetch_assoc($result1);
 	$_SESSION['id']=$row1['id'];
-	header("location:send.php");
+	header("location:send.html");
    
       	 
      }
